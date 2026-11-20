@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 defaults:
   run:
-    working-directory: portfolio-site-github(1)
+    working-directory: portfolio-site-github(1).zip
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
           fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path:  portfolio-site-github(1)/dist
+          path:  portfolio-site-github(1).zip/dist
 
   deploy:
     needs: build
