@@ -13,7 +13,9 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: true
-
+defaults:
+  run:
+    working-directory: portfolio-site-github(1)
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,7 +39,7 @@ jobs:
           fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path:  portfolio-site-github(1)/dist
 
   deploy:
     needs: build
